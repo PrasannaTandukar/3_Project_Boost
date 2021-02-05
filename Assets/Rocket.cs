@@ -6,7 +6,7 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     [SerializeField] float rcsThrust = 250f;
-    [SerializeField] float mainThrust = 30f;
+    [SerializeField] float mainThrust = 40f;
 
     Rigidbody rigidBody;
     AudioSource audioSource;
@@ -29,6 +29,25 @@ public class Rocket : MonoBehaviour
         Thrust();
         Rotate();
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                // do nothing
+                print("OK");
+                break;
+            case "Fuel":
+                print("Fuel");
+                break;
+            default:
+                // kill player
+                print("dead");
+                break;
+        }
+    }
+
     private void Thrust()
     {
         if (Input.GetKey(KeyCode.Space))    // can thrust while rotating
