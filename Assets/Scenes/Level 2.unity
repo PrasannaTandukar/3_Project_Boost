@@ -424,6 +424,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rcsThrust: 250
   mainThrust: 30
+  mainEngine: {fileID: 8300000, guid: bbc50c30188c91247b7d6f0150c075be, type: 3}
+  success: {fileID: 8300000, guid: 6659c7377db25584b8c0fed6f87e23b1, type: 3}
+  death: {fileID: 8300000, guid: d699f54b73090914ea802b795e47439c, type: 3}
 --- !u!82 &1448716508
 AudioSource:
   m_ObjectHideFlags: 0
